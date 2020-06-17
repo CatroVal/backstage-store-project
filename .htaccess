@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+
+#Activar rewrite engine
+RewriteEngine on
+ErrorDocument 404 http://localhost:8888/MASTER-PHP/Proyecto_PHP_POO/error/
+
+#Esta condición va a impedir que nos saque la url si de accede a un directorio o un fichero
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+#Reglas de escritura
+#Carga aqui: (.*) lo que haya en el valor 1, y aqui:(.*) lo que haya en el valor 2
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+</IfModule>

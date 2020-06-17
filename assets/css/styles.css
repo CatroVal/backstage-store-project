@@ -1,0 +1,398 @@
+/*GENERALES*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif, helvetica, arial;
+}
+
+body{
+    background: url(../img/shattered-island.png);
+}
+
+a{
+    color: #0082b3;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #0082b3;
+
+}
+
+a:hover{
+    color: #555555;
+}
+
+.alert_green{
+    color: green;
+}
+
+.alert_red{
+    color: red;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+}
+
+table, td, th{
+    border: 2px solid #232323;
+    padding: 1px;
+}
+
+th{
+    background: orange;
+}
+
+.thumb{
+    width: 120px;
+}
+
+/*CONTAINER*/
+#container{
+    width: 90%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 10px;
+    background: #bebebe;
+}
+
+
+/*HEADER*/
+
+#header{
+    height: 145px;
+    background: #232323;
+}
+
+#logo img{
+    width: 330px;
+    position: relative;
+    top: 10px;
+    left: 394px;
+}
+
+/*MENU*/
+
+#menu{
+    clear: both;
+    background: orange;
+    color: black;
+    height: 40px;
+    border-top: 7px solid #01bcfd;
+    border-bottom: 3px solid #232323;
+}
+
+#menu ul{
+    list-style: none;
+    margin: 0px auto;
+    margin-left: 20px;
+}
+
+#menu ul li{
+    line-height: 40px;
+    position: relative;
+    left: -20px;
+    float: left;
+    border-right: 1px solid #232323;
+}
+
+#menu a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: all 300ms;
+}
+
+/*#menu a:first-child{
+    border-left: 1px solid #232323;
+
+}
+*/
+
+#menu a:hover{
+    background: #bebebe;
+}
+
+/*CONTENT*/
+
+#content{
+    margin: 0px auto;
+    overflow: hidden;
+    /*background: white;*/
+}
+
+/*BARRA LATERAL*/
+
+#lateral{
+    background: white;
+    width: 21%;
+    min-height: 500px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 19px;
+    box-shadow: 0px 0px 4px #000;
+}
+
+#lateral .block_aside{
+    display: block;
+    width: 90%;
+    margin: 5px auto;
+    padding: 10px;
+}
+
+#lateral h3{
+    display: block;
+    color: #000;
+    width: 100%;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background: orange;
+    border: 2px solid #232323;
+}
+
+#lateral ul{
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+
+#lateral ul li{
+    list-style: square;
+    margin-left: 17px;
+    margin-top: 7px;
+    margin-bottom:7px;
+}
+
+/*FORMULARIOS*/
+.form_container{
+    width: 50%;
+    margin-left: 210px;
+}
+
+label,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select, textarea{
+    display: block;
+    width: 95%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select, textarea{
+    border: 1px solid #232323;
+    box-shadow: 0px 0px 3px #6d6d6d inset;
+    background: white;
+    padding: 4px;
+    color: grey;
+    transition: all 300ms;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus{
+    border: 1px solid #04a5e3;
+    color: black;
+}
+
+input[type="button"],
+input[type="submit"],
+button,
+.button{
+    display: block;
+    border-radius: 4px;
+    width: auto;
+    padding: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    background: #232323;
+    border: 1px solid orange;
+    cursor: pointer;
+}
+
+.button{
+    color: white !important;
+    text-decoration: none;
+    padding: 5px;
+    margin: 15px;
+    margin-bottom: 8px;
+}
+
+.button-small{
+    text-align: center;
+    width: 15%;
+    margin-left: 0px;
+}
+
+label,
+input[type="button"],
+input[type="submit"],
+button{
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/*CONTENIDO CENTRAL*/
+
+#central{
+    display: block;
+    min-height: 500px;
+    background: white;
+    width: 72%;
+    float: right;
+    margin-top: 14px;
+    padding: 20px;
+    box-shadow: 0px 0px 4px #000;
+}
+
+#central h1{
+    font-size: 25px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 0px;
+    border-bottom: 2px solid orange;
+}
+
+/*PRODUCTOS*/
+
+.product{
+    width: 30%;
+    border: 2px solid #bebebe;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.product img{
+    height: 140px;
+    margin-bottom: 10px;
+}
+
+.img_carrito{
+    height: 100px;
+}
+
+.product h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product p{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.product a{
+    text-decoration: none;
+}
+
+#detail-product{
+    width: 100%;
+}
+
+#detail-product img{
+    display: block;
+    width: 55%;
+    float: left;
+}
+
+#detail-product .data{
+    display: block;
+    width: 40%;
+    float: right;
+    margin-left: 20px;
+}
+
+#detail-product .button{
+    width: 150px;
+    text-align: center;
+    margin-left: 0px;
+}
+
+.prize{
+    color: #009cce;
+    font-style: italic;
+    font-size: 25px;
+}
+
+/*CARRITO*/
+
+.total-carrito{
+    width: 385px;
+    float: right;
+    margin-right: -15px;
+}
+
+.delete-carrito{
+    width: 385px;
+    float: left;
+    margin-left: -15px;
+}
+
+.total-carrito h3{
+    display: block;
+    float: left;
+    margin-top: 20px;
+}
+
+.button_pedido{
+    display: block;
+    width: 145px;
+    float: right;
+    text-align: center;
+}
+
+.button_delete{
+    display: block;
+    width: 145px;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    color: black !important;
+    background: orange;
+    border: 1px solid #232323;
+}
+
+.updown-unidades{
+    width: 35px;
+    margin: 0px auto;
+}
+
+.updown-unidades .button{
+    display: block;
+    width: 20px;
+    padding: 2px;
+    margin: 5px;
+}
+
+/*FOOTER*/
+
+#footer{
+    clear: both;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: orange;
+    border-top: 3px solid #232323;
+}

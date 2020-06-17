@@ -1,0 +1,4 @@
+1. Mejor validación de datos de registro.
+2. Mostrar en gestión de pedidos los datos del cliente.
+3. Implementar en el pedido un método para disminuir el stock según las cantidades
+   de productos cuando se vendan.
