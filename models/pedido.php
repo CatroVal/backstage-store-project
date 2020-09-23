@@ -155,6 +155,8 @@
 
              $insert = "INSERT INTO lineas_pedidos VALUES(null, {$pedido_id}, {$producto->id}, {$elemento['unidades']})";
              $save = $this->db->query($insert);
+             //Actualizar stock
+             $this->updateStock($producto->id, $elemento['unidades']);
          }
 
          $result = false;
@@ -162,6 +164,20 @@
              $result = true;
          }
          return $result;
+     }
+
+     public function updateStock($id, $unidades) {
+       $sql = "SELECT stock FROM productos WHERE id=$id;";
+       $query = $this->db->query($sql);
+       $registro = $query->fetch_object()->stock;
+
+       $newStock = 0;
+
+       if($registro) {
+         $newStock = $registro - $unidades;
+         $sql = "UPDATE productos SET stock = $newStock WHERE id=$id;";
+         $this->db->query($sql);
+       }
      }
 
      public function edit() {

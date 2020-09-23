@@ -75,7 +75,8 @@ class productoController {
                 if(isset($_GET['id'])) {
                     $id = $_GET['id'];
                     $producto->setId($id);
-                    $save = $producto->edit();
+                    $save = $producto->edit($id);
+
                 } else {
                     $save = $producto->save();
                 }
@@ -98,6 +99,7 @@ class productoController {
         Utils::isAdmin();
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
+            $edit = true;
 
             $producto = new Producto();
             $producto->setId($id);

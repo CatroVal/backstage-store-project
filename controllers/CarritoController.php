@@ -51,6 +51,7 @@ class carritoController {
                     "producto" => $producto
                 );
             }
+
         }
         header("Location:".base_url."carrito/index");
     }
@@ -66,7 +67,17 @@ class carritoController {
     public function up() {
         if(isset($_GET['index'])) {
             $index = $_GET['index'];
-            $_SESSION['carrito'][$index]['unidades']++;
+            $unidades = $_SESSION['carrito'][$index]['unidades'];
+            //Comprobar que hay unidades en stock
+            $producto_id = $_GET['id'];
+            $producto = new Producto();
+            $producto->setId($producto_id);
+            if($producto->getStock() - $unidades > 0 ) {
+              $unidades++;
+
+            } else {
+              echo 'No hay stock disponible.';
+            }
         }
         header("Location:".base_url."carrito/index");
     }

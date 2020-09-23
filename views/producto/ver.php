@@ -11,6 +11,7 @@
         <div class="data">
             <p><?=$product->descripcion?></p><br>
             <strong><p class="prize"><?=$product->precio?> Euros</p></strong><br>
+            <p><?=$product->stock != null ? "En Stock" : "Fuera de Stock"?><p>
             <a href="<?=base_url?>carrito/add&id=<?=$product->id?>" class="button">Comprar</a>
         </div>
     </div>
