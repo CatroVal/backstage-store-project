@@ -10,6 +10,7 @@
         <?php endif; ?>
         <h2><?=$product->nombre?></h2>
     </a>
+    <strong style="color: #FFA500;"><?=$product->stock > 0 ? "En Stock: " . $product->stock : "Stock Agotado"?></strong>
     <p><?=$product->precio?> Euros</p>
     <a href="<?=base_url?>carrito/add&id=<?=$product->id?>" class="button">Comprar</a>
 </div>
