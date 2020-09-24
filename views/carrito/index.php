@@ -24,10 +24,11 @@
             </td>
             <td><a href="<?=base_url?>producto/ver&id=<?=$producto->id?>"><?=$producto->nombre?></a></td>
             <td><?=$producto->precio?> Euros</td>
+
             <!--El $elemento, a diferencia de $producto NO es un objeto; es un array!!!-->
             <td>
                 <div class="updown-unidades">
-                    <a href="<?=base_url?>carrito/up&index=<?=$indice?>" class="button">+</a>
+                    <a href="<?=base_url?>carrito/up&index=<?=$indice?>&producto_id=<?=$producto->id?>" class="button">+</a>
                     <?=$elemento['unidades']?>
                     <a href="<?=base_url?>carrito/down&index=<?=$indice?>" class="button">-</a>
                 </div>

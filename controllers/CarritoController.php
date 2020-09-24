@@ -28,7 +28,7 @@ class carritoController {
             $counter = 0;
             foreach($_SESSION['carrito'] as $indice => $elemento) {
                 /*Si el producto que tengo ya en el carrito coincide con el id del producto que me llega
-                por GET, entonces le sumamaos una unidad*/
+                por GET, entonces le sumamaos una unidad al producto del carrito*/
                 if($elemento['id_producto'] == $producto_id) {
                     $_SESSION['carrito'][$indice]['unidades']++ ;
                     $counter++ ;
@@ -67,18 +67,18 @@ class carritoController {
     public function up() {
         if(isset($_GET['index'])) {
             $index = $_GET['index'];
-            $unidades = $_SESSION['carrito'][$index]['unidades'];
+            $unidades = $_SESSION['carrito'][$index]['unidades']++;
+
             //Comprobar que hay unidades en stock
-            $producto_id = $_GET['id'];
+            $producto_id = $_GET['producto_id'];//Error: Undefined index: id
             $producto = new Producto();
             $producto->setId($producto_id);
-            if($producto->getStock() - $unidades > 0 ) {
-              $unidades++;
+            if($unidades > $producto->getStock()) { //Corregir aquí. Error al aumentar las unidades!!!
+              echo 'No hay unidades suficientes en stock.';
 
-            } else {
-              echo 'No hay stock disponible.';
             }
-        }
+          }
+
         header("Location:".base_url."carrito/index");
     }
 

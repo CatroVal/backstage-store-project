@@ -134,6 +134,7 @@
      }
 
      public function save() {
+
          $sql = "INSERT INTO pedidos VALUES(null, {$this->getUsuarioId()}, '{$this->getProvincia()}', '{$this->getCiudad()}', '{$this->getDireccion()}',
                 {$this->getCoste()}, 'confirm', CURDATE(), CURTIME());";
          $save = $this->db->query($sql);
@@ -152,6 +153,12 @@
 
          foreach ($_SESSION['carrito'] as $elemento) {
              $producto = $elemento['producto'];
+
+             if($producto->stock == 0 || $producto->stock < $elemento['unidades']) {
+               echo "<h2 style='color: #0082B3;'>$producto->nombre</h2><br>
+                  <strong style='color: red;'>Lo sentimos, no hay suficiente stock!</strong>";
+               exit();
+             }
 
              $insert = "INSERT INTO lineas_pedidos VALUES(null, {$pedido_id}, {$producto->id}, {$elemento['unidades']})";
              $save = $this->db->query($insert);
@@ -174,10 +181,12 @@
        $newStock = 0;
 
        if($registro) {
-         $newStock = $registro - $unidades;
-         $sql = "UPDATE productos SET stock = $newStock WHERE id=$id;";
-         $this->db->query($sql);
+         $newStock = $registro;
        }
+       $newStock -= $unidades;
+
+       $sql = "UPDATE productos SET stock = $newStock WHERE id=$id;";
+       $this->db->query($sql);
      }
 
      public function edit() {

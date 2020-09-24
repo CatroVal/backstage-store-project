@@ -11,7 +11,7 @@
         <div class="data">
             <p><?=$product->descripcion?></p><br>
             <strong><p class="prize"><?=$product->precio?> Euros</p></strong><br>
-            <p><?=$product->stock != null ? "En Stock" : "Fuera de Stock"?><p>
+            <strong style="color: #FFA500;"><?=$product->stock > 0 ? "En Stock: " . $product->stock : "Stock Agotado"?></strong>
             <a href="<?=base_url?>carrito/add&id=<?=$product->id?>" class="button">Comprar</a>
         </div>
     </div>
